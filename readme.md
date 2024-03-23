@@ -2,17 +2,17 @@
 
 ## What is it?
 
-The `alphabetise` plugin takes a given [Kirby CMS](http://getkirby.com/) *page* array or *tag* array and returns an alphabetised or numbered array that you can then display or further process. It has been updated to work with Kirby CMS v3+.
+The `alphabetise` plugin takes a given [Kirby CMS](http://getkirby.com/) *page* array or *tag* array and returns an alphabetised or numbered array that you can then display or process further.
+
+This plugin is compatible with both Kirby 3 and Kirby 4.
 
 
 ## Installation
-
 
 ### Clone or download
 
 1. [Clone](https://github.com/shoesforindustry/kirby-plugins-alphabetise.git) or [download](https://github.com/shoesforindustry/kirby-plugins-alphabetise/archive/master.zip) this repository.
 2. Unzip / Move the folder to `site/plugins` and rename it to `alphabetise`.
-
 
 ## How to use it?
 
@@ -41,7 +41,6 @@ In your template, call it like this:
 <?php $alphabetise = alphabetise($page->children()->listed()->sortby('title'), array('key' => 'title')); ?>
 
 ```
-
 
 You then want to loop through the returned results and display them, for example:
 
@@ -97,7 +96,6 @@ Or you can set the `orderby` key to `SORT_STRING` so numbers are listed first, e
 
 ```
 
-
 ## Notes:
 
 The array whose *key* your are trying to sort by should of course only contain letters of the alphabet, otherwise problems may occur.
@@ -108,6 +106,10 @@ Also the code (explode) uses a `~` tilde - if you use this in your *key*, especi
 
 **The `orderby` key is not a string!**
 
+## Author
+
+Russ Baldwin
+[shoesforindustry.net](https://shoesforindustry.net/)
 
 
 ## Author
