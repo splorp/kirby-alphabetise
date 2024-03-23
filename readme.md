@@ -111,7 +111,7 @@ Also the code (explode) uses a `~` tilde - if you use this in your *key*, especi
 Russ Baldwin
 [shoesforindustry.net](https://shoesforindustry.net/)
 
+With additional contributions from:
 
-## Author
-Russ Baldwin  
-[shoesforindustry.net](shoesforindustry.net)
+Grant Hutchinson
+[splorp.com](https://splorp.com/)
