@@ -9,32 +9,27 @@ This plugin is compatible with both Kirby 3 and Kirby 4.
 
 ## Installation
 
-### Clone or download
+### Clone
 
-1. [Clone](https://github.com/shoesforindustry/kirby-plugins-alphabetise.git) or [download](https://github.com/shoesforindustry/kirby-plugins-alphabetise/archive/master.zip) this repository.
-2. Unzip / Move the folder to `site/plugins` and rename it to `alphabetise`.
+1. [Clone](https://github.com/shoesforindustry/kirby-plugins-alphabetise.git) this repository.
+2. Move the folder to `site/plugins`
+3. Rename the folder to `alphabetise`
 
-## How to use it?
-
-### 1. Alphabetical list of child pages using page title as the key:
-
-* **A**
-  * Aa 
-  * Ab 
-* **B**
-  * Ba 
-  * Bb
-+ **1**
-  + 1a
-  + 1b
-+ **2**
-  + 2a
-  + 2b
+### Download
+ 
+1. [Download](https://github.com/shoesforindustry/kirby-plugins-alphabetise/archive/master.zip) this repository.
+2. Decompress the `master.zip` archive.
+3. Move the folder to `site/plugins`
+4. Rename the folder to `alphabetise`
 
 
-The first argument you pass is the sorted **page** array you want to *alphabetise*. The second array's **key** argument determines what to *alphabetise* by. It should be a string like a page 'title'. The values passed to 'sortBy' and 'key' usually are the same.
+## How do you use it?
 
-In your template, call it like this:
+### 1. Create an alphabetical list of child pages using a key value
+
+The first argument you pass is the sorted `$page` array you want to alphabetise. The second array's `key` argument determines what to alphabetise by. It should be a string like a page `title` or `date`. The values passed to `sortBy` and `key` are usually the same.
+
+For example, in your template:
 
 ```php
 
@@ -42,7 +37,7 @@ In your template, call it like this:
 
 ```
 
-You then want to loop through the returned results and display them, for example:
+### 2. Loop through the returned results and display them
 
 ```php
 <?php foreach($alphabetise as $letter => $items) : ?>
@@ -75,16 +70,16 @@ Result:
   + 2a
   + 2b
 
-### 3. Set 'orderBy' key:
+### 3. Optionally set the sort order
 
-Version 0.0.9 added a key to alter how the array appears, by default letters before numbers, e.g.
+By default, letters appear before numbers.
 
 + A
 + B
 + 1
 + 2
 
-Or you can set the `orderby` key to `SORT_STRING` so numbers are listed first, e.g.
+To have numbers listed first, set the `orderby` key to `SORT_STRING`
 
 + 1
 + 2
@@ -96,22 +91,70 @@ Or you can set the `orderby` key to `SORT_STRING` so numbers are listed first, e
 
 ```
 
-## Notes:
+## Additional Information
 
-The array whose *key* your are trying to sort by should of course only contain letters of the alphabet, otherwise problems may occur.
+The `explode` function used for array parsing uses the tilde character `~` as the separator value. If this character appears in a `key` value, especially at the beginning of a string, you could run into sorting problems. You can manually change the separator value if required.
 
-Also the code (explode) uses a `~` tilde - if you use this in your *key*, especially at the beginning of the string, then you could run into sorting problems. You could of course manually change it if required.
+We are using the `ksort` function, so other [sorting type parameters](https://www.php.net/manual/en/function.ksort.php) might be usable, but are untested.
 
-*We are using `ksort`, so other `sort_flags` might be possible, but are untested!*
+Related to this, the `orderby` key is not a string.
 
-**The `orderby` key is not a string!**
 
-## Author
+## Release Notes
+
+### 0.1.3
++ Added check for duplicate `key` values.
++ Updated documentation.
+
+### 0.1.2
++ Added field to `composer.json` for link in Kirby Panel.
+
+### 0.1.1
++ Additional fixes for Kirby 3 compatibility.
+
+### 0.1.0
++ Renamed `alphabetise.php` to `index.php` for Kirby 3 compatibility.
++ Renamed `package.json` to `composer.json`
++ Updated documentation.
+
+### 0.0.9
++ Added `orderby` key for alternative sort order.
+
+### 0.0.8
++ Fixed `Array to string conversion` error.
+
+### 0.0.7
++ Fixed a small bug in the 0.0.6 update.
+
+### 0.0.6
++ Fixed bug when using only a single character of text for a `key` field.
++ Updated documentation to remove workaround.
+
+### 0.0.5
++ Discovered bug when using only a single character of text for a `key` field.
++ Updated documentation with explanation and possible workaround.
+
+### 0.0.4
++ Bug fix for spaces in `explode` key, now `'~'` instead of space `' '`
++ Updated page code with a pre-sort `'sortby('title')'`
++ Updated documentation and examples.
+
+### 0.0.3
++ Updated documentation.
+
+### 0.0.2
++ Added error handling code.
++ Updated documentation.
+
+### 0.0.1
++ Initial release.
+
+## Authors
 
 Russ Baldwin
 [shoesforindustry.net](https://shoesforindustry.net/)
 
-With additional contributions from:
+Additional contributions from:
 
 Grant Hutchinson
 [splorp.com](https://splorp.com/)
