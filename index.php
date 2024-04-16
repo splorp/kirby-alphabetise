@@ -42,7 +42,7 @@ function alphabetise($items, $options = array())
     //Make an array of key and data
     foreach ($array as $temp => $item) {
       if (strlen($temp) < 2) {
-        $temp = $temp . $temp;
+        $temp = $temp . '_';
         $array[substr($temp, 0, 2)][] = $item[0];
       } else {
         $array[substr($temp, 0, 1)][] = $item[0];
