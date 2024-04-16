@@ -4,9 +4,8 @@ Kirby::plugin('splorp/alphabetise', []);
 function alphabetise($items, $options = array())
 {
   // Default key and orderby values
-  // To sort letters listed first, set 'orderby' to SORT_REGULAR
-  // To sort numbers listed first, set 'orderby' to SORT_STRING
-  // Other ksort sort_flags may be usuable but not tested!
+  // To sort letters listed first, set 'orderby' to SORT_NUMERIC
+  // To sort numbers listed first, set 'orderby' to SORT_REGULAR or SORT_STRING
   $defaults = array('key' => 'title', 'orderby' => SORT_REGULAR);
 
   // Merge default and options arrays
