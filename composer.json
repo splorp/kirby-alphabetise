@@ -1,9 +1,9 @@
 {
-  "name": "shoesforindustry/alphabetise",
+  "name": "splorp/alphabetise",
   "version": "0.1.3",
   "type": "kirby-plugin",
   "description": "Alphabetise a Kirby CMS page array or tag array with key",
-  "homepage": "https://github.com/shoesforindustry/kirby-plugins-alphabetise",
+  "homepage": "https://github.com/splorp/kirby-alphabetise",
   "license": "MIT",
   "authors": [
     {

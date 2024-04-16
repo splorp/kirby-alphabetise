@@ -1,6 +1,6 @@
 <?php
 // This plugin will alphabetise a given page array or tag array
-Kirby::plugin('shoesforindustry/alphabetise', []);
+Kirby::plugin('splorp/alphabetise', []);
 function alphabetise($items, $options = array())
 {
   // Default key and orderby values
